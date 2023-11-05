@@ -39,16 +39,19 @@ string answer() {
 
 int main() {
 
+
+    
     string a = answer();
     int t = 0;
     while(t<6) {
 
         cout<<"You are on attempt number "<<t+1<<". Type answer below."<<endl;
         cout<<endl;
+
         string ans;
         cin>>ans;
-        char response[5];
-
+        char *response = new char[5];
+        int b = 0;
         for(int i=0;i<5;i++) {
 
             bool T;
@@ -66,6 +69,8 @@ int main() {
 
                 if(a[i]==ans[i]) {
                     response[i] = 'G';
+                    b++;
+
 
                 }
                 else if(T && a[i]!=ans[i]) {
@@ -83,29 +88,14 @@ int main() {
             cout<<response[k];
         }
         cout<<endl;
-        
-        char win[5];
-
-        for(int v=0;v<5;v++) {
-            win[v] = 'G';
-        }
-
-        int b = 0;
-
-
-        for(int q; q<5; q++) {
-
-            if(response[q] == win[q]) {
-                b++;
-            }
-
-        }
 
         if(b==5) {
-            cout<<"You win"<<endl;
-            return 0;
+            cout<<"You Win!!"<<endl;
+            return 0; 
         }
+        
     
+        delete response;
 
         t++;
     }
@@ -113,7 +103,7 @@ int main() {
 
 
     cout<<endl;
-    cout<<"You lost"<<endl;
+    cout<<"Fuck you, you suck."<<endl;
     cout<<a;
     return 0;
 }
