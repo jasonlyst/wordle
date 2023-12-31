@@ -103,7 +103,7 @@ int main() {
 
 
     cout<<endl;
-    cout<<"Fuck you, you suck."<<endl;
+    cout<<"You loose."<<endl;
     cout<<a;
     return 0;
 }
